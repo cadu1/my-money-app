@@ -7,5 +7,5 @@ module.exports = function(server) {
 
     // Cicly routes
     const BillingCycleService = require('../api/billingCicly/billingCycleService')
-    BillingCycleService.register(route, '/billingCycle')
+    BillingCycleService.register(router, '/billingCycle')
 }
