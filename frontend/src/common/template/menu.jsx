@@ -12,7 +12,7 @@ export default props => (
     ></MenuItem>
     <MenuTree label='Cadastro' icon='edit'>
       <MenuItem
-        path='#billingCycle'
+        path='#billingCycles'
         icon='usd'
         label='Cliclos de Pagamento'
       ></MenuItem>
