@@ -3,14 +3,14 @@ import React, { Component } from 'react'
 export default class Grid extends Component {
   toCssClass(numbers) {
     const cols = numbers ? numbers.split(' ') : []
-    let classes = ''
+    let classes = []
 
-    if (cols[0]) classes += `col-xs-${cols[0]}`
-    if (cols[1]) classes += `col-sm-${cols[1]}`
-    if (cols[2]) classes += `col-md-${cols[2]}`
-    if (cols[3]) classes += `col-lg-${cols[3]}`
+    if (cols[0]) classes.push(`col-xs-${cols[0]}`)
+    if (cols[1]) classes.push(`col-sm-${cols[1]}`)
+    if (cols[2]) classes.push(`col-md-${cols[2]}`)
+    if (cols[3]) classes.push(`col-lg-${cols[3]}`)
 
-    return classes
+    return classes.join(' ')
   }
 
   render() {
