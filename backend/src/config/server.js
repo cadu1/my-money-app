@@ -3,9 +3,11 @@ const port = 3003
 const bodyParser = require('body-parser')
 const express = require('express')
 const server = express()
+const allowedCors = ('./cors')
 
 server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
+server.use(allowedCors)
 
 server.listen(port, function() {
     console.log(`backend is running on port ${port}`)
