@@ -14,6 +14,9 @@ class Dashboard extends Component {
 
   render() {
     const { credit, debit } = this.props.summary
+    let roundedCredit = parseFloat(credit).toFixed(2)
+    let roundedDebit = parseFloat(debit).toFixed(2)
+
     return (
       <div>
         <ContentHeader title='Dashboard' small='versão 1.0'></ContentHeader>
@@ -23,21 +26,21 @@ class Dashboard extends Component {
               cols='12 4'
               color='green'
               icon='bank'
-              value={`R$ ${credit}`}
+              value={`R$ ${roundedCredit}`}
               text='Total de Créditos'
             ></ValueBox>
             <ValueBox
               cols='12 4'
               color='red'
               icon='credit-card'
-              value={`R$ ${debit}`}
+              value={`R$ ${roundedDebit}`}
               text='Total de Débitos'
             ></ValueBox>
             <ValueBox
               cols='12 4'
               color='blue'
               icon='money'
-              value={`R$ ${credit - debit}`}
+              value={`R$ ${roundedCredit - roundedDebit}`}
               text='Valor Consolidado'
             ></ValueBox>
           </div>
