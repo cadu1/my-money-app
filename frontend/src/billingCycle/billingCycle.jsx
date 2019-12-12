@@ -9,11 +9,12 @@ import TabsContent from '../common/tab/tabsContent'
 import TabsHeader from '../common/tab/tabsHeader'
 import TabHeader from '../common/tab/tabHeader'
 import TabContent from '../common/tab/tabContent'
-import { selectTab } from '../common/tab/tabActions'
+import { selectTab, showTabs } from '../common/tab/tabActions'
 
 class BillingCicly extends Component {
   componentWillMount() {
-    this.props.selectTab('tabListar')
+    this.props.selectTab('tabList')
+    this.props.showTabs('tabList', 'tabCreate')
   }
 
   render() {
@@ -23,13 +24,13 @@ class BillingCicly extends Component {
         <Content>
           <Tabs>
             <TabsHeader>
-              <TabHeader label='Listar' icon='bars' target='tabListar' />
+              <TabHeader label='Listar' icon='bars' target='tabList' />
               <TabHeader label='Incluir' icon='plus' target='tabCreate' />
               <TabHeader label='Alterar' icon='pencil' target='tabUpdate' />
               <TabHeader label='Excluir' icon='trash-o' target='tabDelete' />
             </TabsHeader>
             <TabsContent>
-              <TabContent id='tabListar'>Listar</TabContent>
+              <TabContent id='tabList'>Listar</TabContent>
               <TabContent id='tabCreate'>Criar</TabContent>
               <TabContent id='tabUpdate'>Atualizar</TabContent>
               <TabContent id='tabDelete'>Remover</TabContent>
@@ -41,6 +42,6 @@ class BillingCicly extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({ selectTab }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ selectTab, showTabs }, dispatch)
 
 export default connect(null, mapDispatchToProps)(BillingCicly)
