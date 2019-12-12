@@ -6,6 +6,7 @@ import Tabs from '../common/tab/tabs'
 import TabsContent from '../common/tab/tabsContent'
 import TabsHeader from '../common/tab/tabsHeader'
 import TabHeader from '../common/tab/tabHeader'
+import TabContent from '../common/tab/tabContent'
 
 class BillingCicly extends Component {
   render() {
@@ -20,7 +21,12 @@ class BillingCicly extends Component {
               <TabHeader label='Alterar' icon='pencil' target='tabUpdate' />
               <TabHeader label='Excluir' icon='trash-o' target='tabDelete' />
             </TabsHeader>
-            <TabsContent></TabsContent>
+            <TabsContent>
+              <TabContent id='tabListar'>Listar</TabContent>
+              <TabContent id='tabCreate'>Criar</TabContent>
+              <TabContent id='tabUpdate'>Atualizar</TabContent>
+              <TabContent id='tabDelete'>Remover</TabContent>
+            </TabsContent>
           </Tabs>
         </Content>
       </div>

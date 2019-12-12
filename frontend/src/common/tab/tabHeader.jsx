@@ -6,8 +6,9 @@ import { selectTab } from './tabActions'
 
 class TabHeader extends Component {
   render() {
+    const isSelected = this.props.tab.selected === this.props.target
     return (
-      <li>
+      <li className={isSelected ? 'active' : ''}>
         <a href='javascript:;'
           data-toggle='tab'
           data-target={this.props.target}
@@ -20,7 +21,7 @@ class TabHeader extends Component {
   }
 }
 
-const mapStateToProps = state => ({ tabId: state.tab.selected});
+const mapStateToProps = state => ({ tab: state.tab});
 const mapDispatchToProps = dispatch => bindActionCreators({ selectTab }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(TabHeader)
