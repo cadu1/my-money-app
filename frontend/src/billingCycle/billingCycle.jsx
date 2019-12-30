@@ -10,6 +10,7 @@ import TabsHeader from '../common/tab/tabsHeader'
 import TabHeader from '../common/tab/tabHeader'
 import TabContent from '../common/tab/tabContent'
 import { selectTab, showTabs } from '../common/tab/tabActions'
+import List from './billingCycleList';
 
 class BillingCicly extends Component {
   componentWillMount() {
@@ -30,7 +31,9 @@ class BillingCicly extends Component {
               <TabHeader label='Excluir' icon='trash-o' target='tabDelete' />
             </TabsHeader>
             <TabsContent>
-              <TabContent id='tabList'>Listar</TabContent>
+              <TabContent id='tabList'>
+                <List />
+              </TabContent>
               <TabContent id='tabCreate'>Criar</TabContent>
               <TabContent id='tabUpdate'>Atualizar</TabContent>
               <TabContent id='tabDelete'>Remover</TabContent>
